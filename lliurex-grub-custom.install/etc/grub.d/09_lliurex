@@ -1,0 +1,4 @@
+#!/bin/bash
+P=/etc/grub.d/10_linux
+sed -i -e '/^GRUB_DISTRIBUTOR="LliureX 16"$/d' $P
+sed -i -e '1s/\(.*\)/\1\nGRUB_DISTRIBUTOR="LliureX 16"/' $P
