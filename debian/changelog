@@ -1,0 +1,156 @@
+lliurex-grub-custom (0.9.18) xenial; urgency=high
+
+  * Added old grub image in case someone wants a darker image
+
+ -- Hector Garcia Huerta <hectorgh@gmail.com>  Wed, 18 Jul 2018 09:47:45 +0200
+
+lliurex-grub-custom (0.9.17) xenial; urgency=high
+
+  * Darker text box 
+
+ -- Hector Garcia Huerta <hectorgh@gmail.com>  Wed, 18 Jul 2018 08:43:06 +0200
+
+lliurex-grub-custom (0.9.16) xenial; urgency=high
+
+  * Updated xenial background
+
+ -- Hector Garcia Huerta <hectorgh@gmail.com>  Tue, 17 Jul 2018 13:49:27 +0200
+
+lliurex-grub-custom (0.9.15) xenial; urgency=high
+
+  * Added xenial background
+
+ -- Hector Garcia Huerta <hectorgh@gmail.com>  Wed, 27 Jul 2016 14:14:13 +0200
+
+lliurex-grub-custom (0.9.14-1) xenial; urgency=medium
+
+  * Add /etc/grub.d scripts 09_ & 11_ to fix GRUB_DISTRIBUTOR in grub.cfg
+
+ -- M.Angel Juan <m.angel.juan@gmail.com>  Tue, 10 May 2016 14:01:46 +0200
+
+lliurex-grub-custom (0.9.14) xenial; urgency=medium
+
+  * Fix GRUB_DISTRIBUTOR to make work grubx64.efi from xubuntu
+
+ -- M.Angel Juan <m.angel.juan@gmail.com>  Thu, 05 May 2016 15:51:17 +0200
+
+lliurex-grub-custom (0.9.13-1) xenial; urgency=medium
+
+  * Fix typo error
+
+ -- M.Angel Juan <m.angel.juan@gmail.com>  Tue, 03 May 2016 17:45:54 +0200
+
+lliurex-grub-custom (0.9.13) xenial; urgency=medium
+
+  * Rebuilding the code and making optional package
+
+ -- M.Angel Juan <m.angel.juan@gmail.com>  Tue, 03 May 2016 16:39:30 +0200
+
+lliurex-grub-custom (0.9.12-lliurex2) xenial; urgency=medium
+
+  * Modified dependency to allow grub-efi
+
+ -- M.Angel Juan <m.angel.juan@gmail.com>  Tue, 03 May 2016 13:17:41 +0200
+
+lliurex-grub-custom (0.9.12-lliurex1) xenial; urgency=medium
+
+  * Added dependency
+
+ -- M.Angel Juan <m.angel.juan@gmail.com>  Wed, 06 Apr 2016 15:33:39 +0200
+
+lliurex-grub-custom (0.9.12) xenial; urgency=medium
+
+  * Allow update grub-pc without questions
+  * Write config into /etc/default/grub.d
+
+ -- M.Angel Juan <m.angel.juan@gmail.com>  Wed, 10 Feb 2016 15:13:26 +0100
+
+lliurex-grub-custom (0.9.11) xenial; urgency=medium
+
+  * First xenial release
+
+ -- M.Angel Juan <m.angel.juan@gmail.com>  Tue, 09 Feb 2016 14:03:51 +0100
+
+lliurex-grub-custom (0.9.8) trusty; urgency=high
+
+  * Updated with new entry (LliureX Fix), this entry only appears 
+    when some files are present on system. To solve braindamage. 
+
+ -- Angel Berlanas Vicente <angel.berlanas@gmail.com>  Mon, 05 Oct 2015 19:24:09 +0200
+
+lliurex-grub-custom (0.9.7) trusty; urgency=high
+
+  * Added update-initramfs on postinst and prerm
+
+ -- Angel Berlanas Vicente <angel.berlanas@gmail.com>  Tue, 29 Sep 2015 16:34:52 +0200
+
+lliurex-grub-custom (0.9.6) trusty; urgency=high
+
+  * update version
+
+ -- Angel Berlanas Vicente <angel.berlanas@gmail.com>  Tue, 29 Sep 2015 13:20:23 +0200
+
+lliurex-grub-custom (0.9.5) trusty; urgency=high
+
+  * Updated with diversion to 10_linux 
+
+ -- Angel Berlanas Vicente <angel.berlanas@gmail.com>  Mon, 28 Sep 2015 10:38:38 +0200
+
+lliurex-grub-custom (0.9.4) trusty; urgency=high
+
+  * Updated grub with rw option 
+
+ -- Angel Berlanas Vicente <angel.berlanas@gmail.com>  Mon, 28 Sep 2015 08:59:16 +0200
+
+lliurex-grub-custom (0.9.3) trusty; urgency=high
+
+  * 1024x768 is now the default size 
+
+ -- Angel Berlanas Vicente <angel.berlanas@gmail.com>  Mon, 27 Apr 2015 13:11:39 +0200
+
+lliurex-grub-custom (0.9.2) trusty; urgency=high
+
+  * Added background 
+
+ -- Angel Berlanas Vicente <angel.berlanas@gmail.com>  Mon, 30 Mar 2015 09:55:24 +0200
+
+lliurex-grub-custom (0.9.1) trusty; urgency=high
+
+  * - Set HIDDENT_TIME_OUT= as a default value
+
+ -- Angel Berlanas Vicente <angel.berlanas@gmail.com>  Thu, 19 Feb 2015 16:42:19 +0100
+
+lliurex-grub-custom (0.9) trusty; urgency=high
+
+  * Updated grub to trusty
+  * Updated with tokens technology
+  * - Set distribution only one time
+  * - Set GFXMODE only one time
+  * - Set HIDDENT_TIMEOUT only one time
+
+ -- Angel Berlanas Vicente <angel.berlanas@gmail.com>  Mon, 16 Feb 2015 11:14:25 +0100
+
+lliurex-grub-custom (0.7) precise; urgency=high
+
+  * Removed firefox/
+  * Updated priorit
+
+ -- Angel Berlanas Vicente <angel.berlanas@gmail.com>  Fri, 28 Feb 2014 08:16:28 +0100
+
+lliurex-grub-custom (0.5) precise; urgency=high
+
+  * Updated grub timeout 
+
+ -- Angel Berlanas Vicente <angel.berlanas@gmail.com>  Fri, 21 Feb 2014 09:09:56 +0100
+
+lliurex-grub-custom (0.4) precise; urgency=high
+
+  * Updated grub timeout
+
+ -- Angel Berlanas Vicente <angel.berlanas@gmail.com>  Wed, 10 Jul 2013 12:55:04 +0200
+
+lliurex-grub-custom (0.1) precise; urgency=high
+
+  * Initial release. 
+
+ -- Angel Berlanas Vicente <angel.berlanas@gmail.com>  Tue, 09 Jul 2013 13:19:47 +0200

@@ -1,0 +1,33 @@
+#!/bin/sh
+set -e
+
+# Template for diversions
+ORIG_FILE="/etc/grub.d/10_linux"
+OUR_FILE="/etc/lliurex-grub/10_linux_lliurex"
+OUR_PACKAGE="lliurex-grub-custom"
+
+case $1 in 
+        remove|purge|abort-install|disappear)
+                if [ -f /etc/lliurex-grub/10_linux.real ] ; then
+                        rm -f ${ORIG_FILE}
+                        dpkg-divert --package  ${OUR_PACKAGE} --rename --quiet --remove ${ORIG_FILE}|| true
+                fi
+                
+
+		# To clean initramfs scripts
+		if type update-initramfs >/dev/null 2>&1; then
+		update-initramfs -u || true
+		fi
+
+
+                
+                ;;
+        *)
+                echo "Nothing to do"
+                ;; 
+esac
+
+# Other Stuff #
+
+
+#DEBHELPER#
