@@ -43,7 +43,8 @@ HIDDEN_TIMEOUT_QUIET_FILE="03-lliurex-hidden-timeout-quiet.cfg"
 HIDDEN_TIMEOUT_FILE="04-lliurex-hidden-timeout.cfg"
 GRUB_BACKGROUND_FILE="05-lliurex-background.cfg"
 CMDLINE_FILE="06-lliurex-cmdline.cfg"
-THEME_FILE="99-zlliurex-theme.cfg"
+# NAMED THIS WAY TO STAY ON TOP OF BREEZE THEME
+THEME_FILE="99_zlliurex-theme.cfg"
 
 THEME_ONLY=0
 
