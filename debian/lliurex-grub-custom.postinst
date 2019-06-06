@@ -32,7 +32,7 @@ DISTRIBUTION="Ubuntu"
 GFXMODE="1024x768"
 HIDDEN_TIMEOUT_QUIET="true"
 HIDDEN_TIMEOUT=""
-GRUB_BACKGROUND="/usr/share/lliurex-grub-custom/backgrounds/xenial.png"
+GRUB_BACKGROUND="/usr/share/lliurex-grub-custom/backgrounds/bionic.png"
 CMDLINE="net.ifnames=0 quiet splash rw"
 
 DISTRIBUTION_FILE="01-lliurex-distributor.cfg"
