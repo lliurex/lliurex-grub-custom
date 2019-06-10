@@ -19,6 +19,7 @@ terminal-border: "0"
   top = 30%
   width = 45%
   height = 60%
+  align = "center"
   item_font = "Unifont Regular 16"
   item_color = "#000000"
   selected_item_color = "#ffffff"
@@ -27,18 +28,23 @@ terminal-border: "0"
   item_icon_space = 20
   item_height = 36
   item_padding = 5
-  item_spacing = 10
+  item_spacing = 1
   selected_item_pixmap_style = "select_*.png"
+  scrollbar = true
+  scrollbar_width = 20
+  scrollbar_thumb = "slider_*.png"
 }
 
-# Show a countdown message using the label component
-+ label {
+# Show a countdown progress bar component
++ progress_bar {
   top = 82%
   left = 35%
   width = 30%
+  height = 8
+  show_text = false
   align = "center"
   id = "__timeout__"
-  text = "Booting in %d seconds"
-  color = "#ffffff"
-  font = "Unifont Regular 16"
+  fg_color = #3daee9
+  bg_color = #31363b
+  border_color = #4d4d4d
 }
