@@ -1,3 +1,9 @@
+lliurex-grub-custom (0.9.26) bionic; urgency=medium
+
+  * Add old code 
+
+ -- Raul Rodrigo Segura <raurodse@gmail.com>  Thu, 23 Jul 2020 18:57:46 +0200
+
 lliurex-grub-custom (0.9.25) bionic; urgency=medium
 
   * Master tag: 57e59d47871a750e0bf237ad549a57fd5f7d3c7e
