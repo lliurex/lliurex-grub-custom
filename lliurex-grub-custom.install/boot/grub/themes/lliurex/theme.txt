@@ -15,9 +15,9 @@ terminal-border: "0"
 
 # Show the boot menu
 + boot_menu {
-  left = 30%
+  left = 10%
   top = 30%
-  width = 45%
+  width = 75%
   height = 60%
   align = "center"
   item_font = "Unifont Regular 16"
