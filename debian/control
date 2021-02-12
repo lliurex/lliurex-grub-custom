@@ -1,0 +1,18 @@
+Source: lliurex-grub-custom
+Section: utils
+Priority: optional
+Maintainer: Equipo LliureX <lliurex@gva.es>
+Build-Depends: debhelper (>= 7.0)
+Standards-Version: 3.9.7
+
+Package: lliurex-grub-custom
+Architecture: all
+Depends: ${misc:Depends}
+Conflicts: casper-customize-mod-nsswitch (<= 0.10~alpha11)
+Replaces: casper-customize-mod-nsswitch 
+Provides: casper-customize-mod-nsswitch 
+Description: Contains lliurex-grub-custom modifications
+ This package contains the : lliurex-grub 
+ resources.
+
+

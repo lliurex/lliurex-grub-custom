@@ -1,0 +1,97 @@
+#!/bin/sh
+
+fix_ifaces_file(){
+	
+	IFACES=`ls /sys/class/net|egrep -v '^lo$'`
+	I=0
+	cp /etc/network/interfaces /etc/network/interfaces.lliurex-grub-custom-backup
+	for x in $IFACES; do
+	    echo " [ LLiureX Grub Custom ] : Fixing ${x} into /etc/network/interfaces"
+	    sed -i "s%${x}%eth${I}%g" /etc/network/interfaces || echo "Not found interface ${x} into /etc/network/interfaces"
+	    I=$(($I+1))
+	done
+}
+
+regenerate(){
+    # To clean initramfs scripts
+    
+    if type update-initramfs >/dev/null 2>&1; then
+	update-initramfs -u || true
+    fi
+
+    update-grub2 || true
+}
+
+#####
+GRUB_DEFCFG_DIR="/etc/default/grub.d"
+
+#DISTRIBUTION="Lliurex Xenial"
+####Needed by EFI signed application###
+DISTRIBUTION="Ubuntu"
+#######################################
+GFXMODE="1024x768"
+HIDDEN_TIMEOUT_QUIET="true"
+HIDDEN_TIMEOUT=""
+GRUB_BACKGROUND="/usr/share/lliurex-grub-custom/backgrounds/bionic.png"
+CMDLINE="net.ifnames=0 quiet splash rw"
+GRUB_THEME="/boot/grub/themes/lliurex/theme.txt"
+
+
+DISTRIBUTION_FILE="01-lliurex-distributor.cfg"
+GFXMODE_FILE="02-lliurex-gfxmode.cfg"
+HIDDEN_TIMEOUT_QUIET_FILE="03-lliurex-hidden-timeout-quiet.cfg"
+HIDDEN_TIMEOUT_FILE="04-lliurex-hidden-timeout.cfg"
+GRUB_BACKGROUND_FILE="05-lliurex-background.cfg"
+CMDLINE_FILE="06-lliurex-cmdline.cfg"
+# NAMED THIS WAY TO STAY ON TOP OF BREEZE THEME
+THEME_FILE="99_zlliurex-theme.cfg"
+
+THEME_ONLY=0
+
+case $1 in 
+
+        configure)
+	    if [ ! -d ${GRUB_DEFCFG_DIR} ]; then
+		mkdir ${GRUB_DEFCFG_DIR}
+	    fi
+
+            if [ "${THEME_ONLY}" -eq "1" ]; then
+
+		    if [ ! -f ${GRUB_DEFCFG_DIR}/${DISTRIBUTION_FILE} ]; then
+			echo "GRUB_DISTRIBUTOR=\"${DISTRIBUTION}\"" >> ${GRUB_DEFCFG_DIR}/${DISTRIBUTION_FILE}
+		    fi
+		    if [ ! -f ${GRUB_DEFCFG_DIR}/${GFXMODE_FILE} ]; then
+			echo "GRUB_GFXMODE=${GFXMODE}" >> ${GRUB_DEFCFG_DIR}/${GFXMODE_FILE}
+		    fi
+		    if [ ! -f ${GRUB_DEFCFG_DIR}/${HIDDEN_TIMEOUT_QUIET_FILE} ]; then
+			echo "GRUB_HIDDEN_TIMEOUT_QUIET=${HIDDEN_TIMEOUT_QUIET}" >> ${GRUB_DEFCFG_DIR}/${HIDDEN_TIMEOUT_QUIET_FILE}
+		    fi
+		    if [ ! -f ${GRUB_DEFCFG_DIR}/${HIDDEN_TIMEOUT_FILE} ]; then
+			echo "GRUB_HIDDEN_TIMEOUT=${HIDDEN_TIMEOUT}" >> ${GRUB_DEFCFG_DIR}/${HIDDEN_TIMEOUT_FILE}
+		    fi
+		    if [ ! -f ${GRUB_DEFCFG_DIR}/${GRUB_BACKGROUND_FILE} ]; then
+			echo "GRUB_BACKGROUND=\"${GRUB_BACKGROUND}\"" >> ${GRUB_DEFCFG_DIR}/${GRUB_BACKGROUND_FILE}
+		    fi
+		    
+	    fi
+
+            if [ ! -f ${GRUB_DEFCFG_DIR}/${CMDLINE_FILE} ]; then
+			echo "GRUB_CMDLINE_LINUX_DEFAULT=\"${CMDLINE}\"" >> ${GRUB_DEFCFG_DIR}/${CMDLINE_FILE}
+	    fi
+
+	    if [ ! -f ${GRUB_DEFCFG_DIR}/${THEME_FILE} ]; then
+                echo "GRUB_THEME=\"${GRUB_THEME}\"" >> ${GRUB_DEFCFG_DIR}/${THEME_FILE}
+            fi
+	    
+	    fix_ifaces_file
+
+	    regenerate
+            ;;
+        *)
+                echo "Nothing to do"
+                ;; 
+esac
+
+#DEBHELPER#
+
+
