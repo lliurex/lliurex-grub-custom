@@ -1,3 +1,9 @@
+lliurex-grub-custom (0.13) jammy; urgency=medium
+
+  * Added configuration changes to LliureX 23 
+
+ -- Hector Garcia Huerta <hectorgh@gmail.com>  Thu, 21 Sep 2023 16:19:44 +0200
+
 lliurex-grub-custom (0.12) jammy; urgency=medium
 
   * First jammy release
