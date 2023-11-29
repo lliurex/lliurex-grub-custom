@@ -1,3 +1,9 @@
+lliurex-grub-custom (0.12) focal; urgency=medium
+
+  * Forcing lliurex entry as default boot
+
+ -- Hector Garcia Huerta <hectorgh@gmail.com>  Wed, 29 Nov 2023 13:05:27 +0100
+
 lliurex-grub-custom (0.11) focal; urgency=medium
 
   * Fixed release version
