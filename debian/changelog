@@ -1,3 +1,9 @@
+lliurex-grub-custom (0.14) jammy; urgency=medium
+
+  * Forcing LliureX as first grub option
+
+ -- Hector Garcia Huerta <hectorgh@gmail.com>  Mon, 08 Jan 2024 08:03:08 +0100
+
 lliurex-grub-custom (0.13) jammy; urgency=medium
 
   * Added configuration changes to LliureX 23 
