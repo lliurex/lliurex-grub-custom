@@ -1,0 +1,121 @@
+#!/usr/bin/python3
+
+import re
+import os
+import shutil
+
+class ConfigureGrub:
+	
+	def dprint(self,data):
+		print("[ConfigureGrub] %s"%str(data))
+	
+	def read_grub(self):
+
+		self.dprint("Reading /boot/grub/grub.cfg file ...")
+		self.grub_lines=None
+
+		try:
+			f=open("/boot/grub/grub.cfg")
+			self.grub_lines=f.readlines()
+			f.close()
+			self.dprint("    Got %s lines"%len(self.grub_lines))
+		except Exception as e:
+			self.dprint("    Error: %s"%str(e))
+			
+		return self.grub_lines
+		
+	#def read_grub
+	
+	def parse_grub_lines(self):
+		
+		self.dprint("Parsing grub.cfg lines ...")
+		self.entries={}
+		count=0		
+		sub_count=0
+		last_option_found=False
+		for line in self.grub_lines:
+			if line.startswith("menuentry") and "class os" in line:
+				tmp=line.split("'")[1]
+				self.entries[str(count)]=tmp
+				last_option_found=True
+			if line.startswith("submenu"):
+				last_submenu=line.split("'")[1]
+				sub_count=0
+				last_option_found=True
+			if line.startswith("\tmenuentry") and "class os" in line:
+				tmp=line.split("'")[1]
+				self.entries["%s>%s"%(count,sub_count)]=tmp
+				sub_count=+1
+			if line.startswith("}") and last_option_found:
+				count+=1
+				last_option_found=False		
+				
+		self.dprint("    Got %s entries:"%len(self.entries))
+		for entry in self.entries:
+			self.dprint("    \t[%s]\t%s"%(entry,self.entries[entry]))
+		return self.entries
+		
+	#def parse_grub_lines
+
+	def get_lliurex_entry(self):
+	
+		self.dprint("Getting LliureX grub default id entry ...")
+		grub_default=None
+	
+		for entry in self.entries:
+			if ">" not in entry:
+				if "lliurex 21" in self.entries[entry].lower():
+					grub_default=entry
+				if "lliurex 19" in self.entries[entry].lower():
+					if grub_default==None:
+						grub_default=entry
+		
+		self.dprint("    GRUB_DEFAULT=%s"%grub_default)
+		return grub_default
+		
+	#def get_lliurex_entry
+	
+	def set_grub_default(self,entry=0):
+		
+		self.dprint("Setting new GRUB_DEFAULT ...")
+		
+		old="/etc/default/grub"
+		new="/etc/default/grub.lliurex"
+		
+		#old="/etc/default/grub.bak"
+		#new="/tmp/grub"
+
+		with open(old) as f:
+			lines=f.readlines()
+		
+		pattern=re.compile("^GRUB_DEFAULT\s*=\s*\d+\s+")
+		
+		with open(new,"w") as f:
+			for line in lines:
+				if pattern.match(line):
+					line="GRUB_DEFAULT=%s\n"%entry
+				f.write(line)
+		
+		shutil.copy(new,old)
+		
+	#def set_grub_default
+	
+	def update_grub(self):
+		
+		self.dprint("Updating grub ...")
+		os.system("update-grub || true")
+		
+	#def update_grub
+	
+if __name__=="__main__":
+	
+	cb=ConfigureGrub()
+	cb.read_grub()
+	cb.parse_grub_lines()
+	entry=cb.get_lliurex_entry()
+	if entry!=None:
+		cb.set_grub_default(entry)
+		cb.update_grub()
+	
+	
+	
