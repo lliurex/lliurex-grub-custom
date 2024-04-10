@@ -83,7 +83,7 @@ case $1 in
                 echo "GRUB_THEME=\"${GRUB_THEME}\"" >> ${GRUB_DEFCFG_DIR}/${THEME_FILE}
             fi
 
-	    if dpkg --compare-versions "$2" lt 0.15; then
+	    if dpkg --compare-versions "$2" lt 0.16; then
 		/usr/share/lliurex-grub-custom/helpers/lliurex-first || true
 	    fi
 
