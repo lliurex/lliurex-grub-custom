@@ -64,8 +64,11 @@ class ConfigureGrub:
 	
 		for entry in self.entries:
 			if ">" not in entry:
-				if "lliurex 21" in self.entries[entry].lower():
+				if "lliurex 23" in self.entries[entry].lower():
 					grub_default=entry
+				if "lliurex 21" in self.entries[entry].lower():
+					if grub_default==None:
+						grub_default=entry
 				if "lliurex 19" in self.entries[entry].lower():
 					if grub_default==None:
 						grub_default=entry
