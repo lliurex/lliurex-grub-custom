@@ -1,3 +1,9 @@
+lliurex-grub-custom (0.17) jammy; urgency=medium
+
+  * Added lliurex-grub-custom-disable-osprober package 
+
+ -- Hector Garcia Huerta <hectorgh@gmail.com>  Fri, 28 Jun 2024 11:59:16 +0200
+
 lliurex-grub-custom (0.16) jammy; urgency=medium
 
   * Added lliurex 23 to entry parsing 
