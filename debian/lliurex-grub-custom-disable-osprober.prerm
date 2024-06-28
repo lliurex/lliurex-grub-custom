@@ -1,0 +1,22 @@
+#!/bin/sh
+set -e
+
+regenerate(){
+    update-grub2 || true
+}
+
+case $1 in 
+        remove|purge|abort-install|disappear)
+
+		regenerate
+                
+                ;;
+        *)
+                echo "Nothing to do"
+                ;; 
+esac
+
+# Other Stuff #
+
+
+#DEBHELPER#

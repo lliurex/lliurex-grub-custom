@@ -15,4 +15,9 @@ Description: Contains lliurex-grub-custom modifications
  This package contains the : lliurex-grub 
  resources.
 
+Package: lliurex-grub-custom-disable-osprober
+Architecture: all
+Depends: ${misc:Depends}
+Description: Contains GRUB_DISABLE_OSPROBER configuration
+ This package contains configuration to disable os-prober
 
