@@ -1,3 +1,9 @@
+lliurex-grub-custom (0.12) focal; urgency=medium
+
+  * Adding disable-osprober package 
+
+ -- Hector Garcia Huerta <hectorgh@gmail.com>  Mon, 01 Jul 2024 09:07:56 +0200
+
 lliurex-grub-custom (0.11.5) focal; urgency=medium
 
   * Forcing lliurex entry as default boot
