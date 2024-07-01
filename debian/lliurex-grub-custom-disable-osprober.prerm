@@ -7,7 +7,7 @@ regenerate(){
 
 case $1 in 
         remove|purge|abort-install|disappear)
-
+		rm -rf /etc/default/grub.d/99-lliurex-disable-osprober.cfg || true
 		regenerate
                 
                 ;;
