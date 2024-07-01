@@ -1,4 +1,4 @@
-lliurex-grub-custom (0.17) jammy; urgency=medium
+lliurex-grub-custom (0.17.1) jammy; urgency=medium
 
   * Added lliurex-grub-custom-disable-osprober package 
 
