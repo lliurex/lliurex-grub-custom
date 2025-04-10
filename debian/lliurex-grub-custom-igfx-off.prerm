@@ -1,0 +1,22 @@
+#!/bin/sh
+set -e
+
+regenerate(){
+    update-grub2 || true
+}
+
+case $1 in 
+        remove|purge|abort-install|disappear)
+		rm -rf /etc/default/grub.d/10-lliurex-igfx-off.cfg || true
+		regenerate
+                
+                ;;
+        *)
+                echo "Nothing to do"
+                ;; 
+esac
+
+# Other Stuff #
+
+
+#DEBHELPER#
