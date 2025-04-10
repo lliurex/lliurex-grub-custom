@@ -21,3 +21,11 @@ Depends: ${misc:Depends}
 Description: Contains GRUB_DISABLE_OSPROBER configuration
  This package contains configuration to disable os-prober
 
+Package: lliurex-grub-custom-igfx-off
+Architecture: all
+Depends: ${misc:Depends}
+Description: Add boot option intel_iommu=igfx_off to grub
+ This package configures grub to avoid screen flickering
+ with some Intel grahics.
+ Provided configuration fixes flickering problems detected
+ in GVA PRJ1 laptops when using external HDMI monitor.
