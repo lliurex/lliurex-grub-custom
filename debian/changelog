@@ -1,3 +1,9 @@
+lliurex-grub-custom (0.25.2) noble; urgency=medium
+
+  * removed old network interfaces naming
+
+ -- Hector Garcia Huerta <hectorgh@gmail.com>  Fri, 02 May 2025 12:55:47 +0200
+
 lliurex-grub-custom (0.25.1) noble; urgency=medium
 
   * first noble release 
