@@ -87,7 +87,7 @@ case $1 in
 		/usr/share/lliurex-grub-custom/helpers/lliurex-first || true
 	    fi
 
-	    fix_ifaces_file
+	    #fix_ifaces_file
 
 	    regenerate
             ;;
