@@ -94,7 +94,7 @@ class ConfigureGrub:
 		with open(old) as f:
 			lines=f.readlines()
 		
-		pattern=re.compile("^GRUB_DEFAULT\s*=\s*\d+\s+")
+		pattern=re.compile(r"^GRUB_DEFAULT\s*=\s*\d+\s+")
 		
 		with open(new,"w") as f:
 			for line in lines:
