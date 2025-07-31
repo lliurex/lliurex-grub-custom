@@ -11,6 +11,8 @@ case $1 in
                 if [ -f /etc/lliurex-grub/10_linux.real ] ; then
                         rm -f ${ORIG_FILE}
                         dpkg-divert --package  ${OUR_PACKAGE} --rename --quiet --remove ${ORIG_FILE}|| true
+                        dpkg-divert --package  ${OUR_PACKAGE} --rename --quiet --remove /etc/grub.d/20_memtest86+ || true
+
                 fi
                 
 
