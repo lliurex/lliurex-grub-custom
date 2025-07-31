@@ -95,6 +95,11 @@ case $1 in
 
 	    #fix_ifaces_file
 
+	    if dpkg --compare-versions "$2" lt 0.27; then
+		dpkg-divert --package lliurex-grub-custom --rename --quiet --add --divert /usr/share/lliurex-grub-custom/diverted/20_memtest86+ /etc/grub.d/20_memtest86+
+	    fi
+
+
 	    regenerate
             ;;
         *)
