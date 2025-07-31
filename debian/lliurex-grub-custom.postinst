@@ -27,7 +27,7 @@ GRUB_DEFCFG_DIR="/etc/default/grub.d"
 
 #DISTRIBUTION="Lliurex Xenial"
 ####Needed by EFI signed application###
-DISTRIBUTION="Ubuntu"
+DISTRIBUTION="LliureX25"
 #######################################
 GFXMODE="1024x768"
 HIDDEN_TIMEOUT_QUIET="true"
@@ -82,6 +82,12 @@ case $1 in
 	    if [ ! -f ${GRUB_DEFCFG_DIR}/${THEME_FILE} ]; then
                 echo "GRUB_THEME=\"${GRUB_THEME}\"" >> ${GRUB_DEFCFG_DIR}/${THEME_FILE}
             fi
+
+	    if [ ! -f ${GRUB_DEFCFG_DIR}/${DISTRIBUTION_FILE} ]; then
+                echo "DISTRIBUTION=\"${DISTRIBUTION}\"" >> ${GRUB_DEFCFG_DIR}/${DISTRIBUTION_FILE}
+            fi
+
+	    
 
 	    if dpkg --compare-versions "$2" lt 0.16; then
 		/usr/share/lliurex-grub-custom/helpers/lliurex-first || true
