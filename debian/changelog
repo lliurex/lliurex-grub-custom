@@ -1,3 +1,9 @@
+lliurex-grub-custom (0.27) noble; urgency=medium
+
+  * Fix grub key
+
+ -- Raul Rodrigo Segura <raurodse@gmail.com>  Thu, 31 Jul 2025 13:51:22 +0200
+
 lliurex-grub-custom (0.26) noble; urgency=medium
 
   * Remove pxe entry
