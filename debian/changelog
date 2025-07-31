@@ -1,3 +1,9 @@
+lliurex-grub-custom (0.26) noble; urgency=medium
+
+  * Remove pxe entry
+
+ -- Raul Rodrigo Segura <raurodse@gmail.com>  Thu, 31 Jul 2025 11:06:53 +0200
+
 lliurex-grub-custom (0.25.2) noble; urgency=medium
 
   * removed old network interfaces naming
