@@ -87,7 +87,7 @@ case $1 in
                 echo "DISTRIBUTION=\"${DISTRIBUTION}\"" >> ${GRUB_DEFCFG_DIR}/${DISTRIBUTION_FILE}
             fi
 
-	    
+	    [ ! -e /etc/grub.d/42_lliurex ] || rm /etc/grub.d/42_lliurex
 
 	    if dpkg --compare-versions "$2" lt 0.16; then
 		/usr/share/lliurex-grub-custom/helpers/lliurex-first || true
