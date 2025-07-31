@@ -84,7 +84,7 @@ case $1 in
             fi
 
 	    if [ ! -f ${GRUB_DEFCFG_DIR}/${DISTRIBUTION_FILE} ]; then
-                echo "DISTRIBUTION=\"${DISTRIBUTION}\"" >> ${GRUB_DEFCFG_DIR}/${DISTRIBUTION_FILE}
+                echo "GRUB_DISTRIBUTOR=\"${DISTRIBUTION}\"" >> ${GRUB_DEFCFG_DIR}/${DISTRIBUTION_FILE}
             fi
 
 	    [ ! -e /etc/grub.d/42_lliurex ] || rm /etc/grub.d/42_lliurex
