@@ -1,0 +1,7 @@
+#!/bin/sh
+
+GRUB_DISABLE_RECOVERY=true
+GRUB_DISABLE_SUBMENU=true
+GRUB_DISTRIBUTOR="LLiureX 23 ( Safe graphics )"
+GRUB_CMDLINE_LINUX="${GRUB_CMDLINE_LINUX} nomodeset"
+. /etc/grub.d/10_linux
