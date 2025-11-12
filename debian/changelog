@@ -1,3 +1,9 @@
+lliurex-grub-custom (0.17.5) jammy; urgency=medium
+
+  * Fix typo 
+
+ -- Raul Rodrigo Segura <raurodse@gmail.com>  Wed, 12 Nov 2025 10:43:50 +0100
+
 lliurex-grub-custom (0.17.4) jammy; urgency=medium
 
   * Create safe graphics entries
