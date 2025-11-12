@@ -29,3 +29,11 @@ Description: Add boot option intel_iommu=igfx_off to grub
  with some Intel grahics.
  Provided configuration fixes flickering problems detected
  in GVA PRJ1 laptops when using external HDMI monitor.
+
+Package: lliurex-grub-custom-nomodeset-fix
+Architecture: all
+Depends: ${misc:Depends}
+Description: Delete nomodeset config created by calamares
+ Kde neon create by default nomodeset config if this is set on start
+ live
+
