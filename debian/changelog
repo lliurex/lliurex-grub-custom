@@ -1,3 +1,10 @@
+lliurex-grub-custom (0.17.4) jammy; urgency=medium
+
+  * Create safe graphics entries
+  * Delete nomodeset attribute from grub config
+
+ -- Raul Rodrigo Segura <raurodse@gmail.com>  Wed, 12 Nov 2025 09:58:57 +0100
+
 lliurex-grub-custom (0.17.3) jammy; urgency=medium
 
   * Added lliurex-grub-custom-igfx-off binary package
