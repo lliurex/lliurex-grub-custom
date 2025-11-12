@@ -21,8 +21,10 @@ set -e
 case "$1" in
     configure)
 	    NOMODESET_PATH="/etc/default/grub.d/neon-installation-nomodeset.cfg"
-	    [ ! -e $NOMODESET_PATH ] || rm $NOMODESET_PATH 
-    ;;
+	    if [ -e ${NOMODESET_PATH} ]; then
+		rm $NOMODESET_PATH
+		update-grub
+	    fi
 
     abort-upgrade|abort-remove|abort-deconfigure)
     ;;
